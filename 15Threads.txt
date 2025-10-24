@@ -1,0 +1,62 @@
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.301-b09 mixed mode):
+
+Mychanges
+
+"Main-Thread" #1 prio=5 os_prio=0 tid=0x00007f7b2c009800 nid=0x1e9c RUNNABLE
+   java.lang.Thread.State: RUNNABLE
+        at com.example.Main.execute(Main.java:45)
+
+"Deadlocked-Thread-1" #2 prio=5 os_prio=0 tid=0x00007f7b2c010000 nid=0x1e9d BLOCKED
+   java.lang.Thread.State: BLOCKED (waiting for <0x0000000789bcdef2>)
+        at com.example.DeadlockClass.methodA(DeadlockClass.java:30)
+
+"Deadlocked-Thread-2" #3 prio=5 os_prio=0 tid=0x00007f7b2c012000 nid=0x1e9e BLOCKED
+   java.lang.Thread.State: BLOCKED (waiting for <0x0000000789bcdef3>)
+        at com.example.DeadlockClass.methodB(DeadlockClass.java:45)
+
+"Infinite-Wait-Thread" #4 prio=5 os_prio=0 tid=0x00007f7b2c013000 nid=0x1e9f WAITING
+   java.lang.Thread.State: WAITING (on object monitor)
+        at java.lang.Object.wait(Native Method)
+
+"High-CPU-Thread" #5 prio=5 os_prio=0 tid=0x00007f7b2c014000 nid=0x1ea0 RUNNABLE
+   java.lang.Thread.State: RUNNABLE
+        at com.example.CPUIntensiveTask.run(CPUIntensiveTask.java:50)
+
+"Long-Sleeping-Thread" #6 prio=5 os_prio=0 tid=0x00007f7b2c015000 nid=0x1ea1 TIMED_WAITING
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+        at java.lang.Thread.sleep(Native Method)
+
+"Excessive-Locking-Thread" #7 prio=5 os_prio=0 tid=0x00007f7b2c016000 nid=0x1ea2 BLOCKED
+   java.lang.Thread.State: BLOCKED (waiting for lock)
+        at com.example.LockContention.run(LockContention.java:20)
+
+"IO-Wait-Thread" #8 prio=5 os_prio=0 tid=0x00007f7b2c017000 nid=0x1ea3 WAITING
+   java.lang.Thread.State: WAITING (on file I/O)
+        at java.io.FileInputStream.read(Native Method)
+
+"Database-Wait-Thread" #9 prio=5 os_prio=0 tid=0x00007f7b2c018000 nid=0x1ea4 TIMED_WAITING
+   java.lang.Thread.State: TIMED_WAITING (waiting for DB response)
+        at com.example.DBConnection.executeQuery(DBConnection.java:30)
+
+"Blocked-On-Network-Thread" #10 prio=5 os_prio=0 tid=0x00007f7b2c019000 nid=0x1ea5 TIMED_WAITING
+   java.lang.Thread.State: TIMED_WAITING (network call delay)
+        at java.net.SocketInputStream.socketRead(Native Method)
+
+"Thread-Pool-Starvation-Thread" #11 prio=5 os_prio=0 tid=0x00007f7b2c020000 nid=0x1ea6 WAITING
+   java.lang.Thread.State: WAITING (waiting for task)
+        at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1050)
+
+"Frequent-GC-Pause-Thread" #12 prio=5 os_prio=0 tid=0x00007f7b2c021000 nid=0x1ea7 RUNNABLE
+   java.lang.Thread.State: RUNNABLE (Frequent GC activity)
+        at com.example.MemoryIntensiveTask.run(MemoryIntensiveTask.java:60)
+
+"Deadlock-Avoided-Thread" #13 prio=5 os_prio=0 tid=0x00007f7b2c022000 nid=0x1ea8 TIMED_WAITING
+   java.lang.Thread.State: TIMED_WAITING (trying to avoid deadlock)
+        at java.util.concurrent.locks.ReentrantLock.tryLock()
+
+"Starved-Thread" #14 prio=5 os_prio=0 tid=0x00007f7b2c023000 nid=0x1ea9 BLOCKED
+   java.lang.Thread.State: BLOCKED (lower priority, never scheduled)
+        at com.example.Starvation.run(Starvation.java:35)
+
+"Zombie-Thread" #15 prio=5 os_prio=0 tid=0x00007f7b2c024000 nid=0x1eaa TERMINATED
+   java.lang.Thread.State: TERMINATED
